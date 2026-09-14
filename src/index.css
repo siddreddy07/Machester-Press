@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F0ECE4;
+  --color-paper-light: #FAF9F5;
+  --color-ink: #111111;
+  --color-charcoal: #292725;
+  --color-brick: #91493B;
+  --color-maroon: #6F3C43;
+  --color-timber: #9A744E;
+  --color-industrial-grey: #AAA69E;
+  --color-soft-line: #C9C3B8;
+  --color-clean-white: #FAF9F5;
+
+  --font-script: "Caveat", cursive;
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Space Mono", monospace;
+}
+
+:root {
+  --bg-paper: #F0ECE4;
+  --bg-clean: #FAF9F5;
+  --color-ink: #111111;
+  --color-charcoal: #292725;
+  --color-brick: #91493B;
+  --color-maroon: #6F3C43;
+  --color-timber: #9A744E;
+  --color-grey: #AAA69E;
+  --color-soft-line: #C9C3B8;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--color-ink);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible global focus outline */
+:focus-visible {
+  outline: 2px solid #91493B;
+  outline-offset: 2px;
+}
+
+/* Custom typographic utilities */
+.font-script {
+  font-family: "Caveat", cursive;
+}
+
+.font-condensed {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.font-display {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+.font-serif {
+  font-family: "DM Serif Display", Georgia, serif;
+}
+
+.font-mono-press {
+  font-family: "Space Mono", monospace;
+}
+
+/* Print registration marks & technical lines */
+.reg-crosshair {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+}
+.reg-crosshair::before,
+.reg-crosshair::after {
+  content: "";
+  position: absolute;
+  background-color: currentColor;
+}
+.reg-crosshair::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+.reg-crosshair::after {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+

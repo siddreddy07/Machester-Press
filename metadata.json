@@ -1,0 +1,6 @@
+{
+  "name": "Manchester Press",
+  "description": "Melbourne laneway cafe concept at 8 Rankins Lane featuring house-made bagels and specialty coffee.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
